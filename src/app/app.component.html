@@ -1,0 +1,23 @@
+<hello [name]="name"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+<div charts [type]="'pie'" [config]="pieConfig" [data]="pieData" [color]="pieColors" [drillthrough]=true [fontcolor]="'#000'" (onDrillthrough)="drilledPie($event)" [tooltip]=true [tooltipstyle]="tooltipStyle" [label]="pieLabels" [value]="pieValue" [displaylabel]="pieDisplayLabels" [displayvalue]="pieDisplayValue" [fontsize]="9"></div>
+
+<div charts [type]="'bar'" [config]="barConfig" [data]="barData" [color]="barColors" [drillthrough]=true (onDrillthrough)="drilledBar($event)"[tooltip]=true [tooltipstyle]="tooltipStyle" [label]="barLabels" [value]="barValue" [displaylabel]="barDisplayLabels" [displayvalue]="barDisplayValue" [fontsize]="9" [showX]=true [showY]=false></div>
+
+<div charts [type]="'donut'" [config]="donutConfig" [data]="donutData" [color]="donutColors" [drillthrough]=true [fontcolor]="'#800080'" (onDrillthrough)="drilledDonut($event)" [tooltip]=true [tooltipstyle]="tooltipStyle" [label]="donutLabels" [value]="donutValue" [displaylabel]="donutDisplayLabels" [displayvalue]="donutDisplayValue" [fontsize]="9"></div>
+
+<div charts [type]="'disabledDonut'" [config]="donutConfig" [data]="donutData" [color]="donutColors" [drillthrough]=false [fontcolor]="'#800080'" (onDrillthrough)="drilledDonut($event)" [tooltip]=false [tooltipstyle]="tooltipStyle" [label]="donutLabels" [value]="donutValue" [displaylabel]="donutDisplayLabels" [displayvalue]="donutDisplayValue" [fontsize]="9"></div>
+
+<div charts [type]="'grouped'" [config]="groupedConfig" [data]="groupedData" [color]="groupedColors" [drillthrough]=true [fontcolor]="'#800080'" (onDrillthrough)="drilledGrouped($event)" [tooltip]=true [tooltipstyle]="tooltipStyle" [label]="groupedLabels" [value]="groupedValue" [displaylabel]="groupedDisplayLabels" [displayvalue]="groupedDisplayValue" [fontsize]="9" [showX]=true [showY]=false></div>
+
+<div charts [type]="'horizontalBar'" [config]="horizontalBarConfig" [data]="horizontalBarData" [color]="horizontalBarColors" [drillthrough]=true [fontcolor]="'#800080'" (onDrillthrough)="drilledhorizontalBar($event)" [tooltip]=true [tooltipstyle]="tooltipStyle" [label]="horizontalBarLabels" [value]="horizontalBarValue" [displaylabel]="horizontalBarDisplayLabels" [displayvalue]="horizontalBarDisplayValue" [fontsize]="9" [showX]=true [showY]=true></div>
+
+<div charts [type]="'pie3d'" [config]="pie3dConfig" [data]="pie3dData" [color]="pie3dColors" [drillthrough]=true [fontcolor]="'#ffffff'" (onDrillthrough)="drilledpie3d($event)" [tooltip]=true [tooltipstyle]="tooltipStyle" [label]="pie3dLabels" [value]="pie3dValue" [displaylabel]="pie3dDisplayLabels" [displayvalue]="pie3dDisplayValue" [fontsize]="9"></div>
+
+<div charts [type]="'stacked'" [config]="stackBarConfig" [data]="stackBarData" [color]="stackBarColors" [drillthrough]=true [fontcolor]="'#000000'" (onDrillthrough)="drilledstackBar($event)" [tooltip]=true [tooltipstyle]="tooltipStyle" [label]="stackBarLabels" [value]="stackBarValue" [displaylabel]="stackBarDisplayLabels" [displayvalue]="stackBarDisplayValue" [fontsize]="9"></div>
+
+<div charts [type]="'line'" [config]="lineConfig" [data]="lineData" [color]="lineColors" [drillthrough]=true [fontcolor]="'#000000'" (onDrillthrough)="drilledliner($event)" [tooltip]=true [tooltipstyle]="tooltipStyle" [label]="lineLabels" [value]="lineValue" [displaylabel]="lineDisplayLabels" [displayvalue]="linerDisplayValue" [fontsize]="9"></div>
+
+<div charts [type]="'horizontalStackBar'" [config]="horizontalStackBarConfig" [data]="horizontalStackBarData" [color]="horizontalStackBarColors" [drillthrough]=true [fontcolor]="'#000000'" (onDrillthrough)="drilledliner($event)" [tooltip]=true [tooltipstyle]="tooltipStyle" [label]="lineLabels" [value]="horizontalStackBarValue" [displaylabel]="horizontalStackBarDisplayLabels" [displayvalue]="horizontalStackBarDisplayValue" [fontsize]="9"></div>
