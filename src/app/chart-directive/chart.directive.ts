@@ -343,13 +343,13 @@ export class ChartDirective implements OnInit{
     var tooltip = this.toolTip();
     const color = d3.scaleOrdinal(this.color);
 
-    var width = 200,//.config.width - this.config.left - this.config.right,
-      height = 200,//this.config.height - this.config.top - this.config.bottom,
+    var width = this.config.width - this.config.left - this.config.right,
+      height = this.config.height - this.config.top - this.config.bottom,
       radius = Math.min(width, height)/2;
 
 		var arc = d3.arc()
     	.outerRadius(radius)
-    	.innerRadius(self.config.innerRadius+50);
+    	.innerRadius(self.config.innerRadius+5);
 
 		var pie = d3.pie()
 	    .sort(null)
@@ -393,15 +393,33 @@ export class ChartDirective implements OnInit{
 
    	g.append("path")
     	.attr("d", arc)
-      .style("fill", (d,i) => { return color(i); });
+      .style("fill", 'grey');
 
-    svg.append("div")
-      .attr("x", 0)
-      .attr("y", 0)
-      .html("500")
-      .style("font-weight", "bold")
-      .style("color", "red")
-      .style("fill", "green");
+
+    svg.append("text")
+      .attr("x", -8)
+      .attr("y", -10)
+      .style("font-size", "10px")
+      .style("fill", "red")
+      .html("500");
+    svg.append("text")
+      .attr("x", -11)
+      .attr("y", -1)
+      .style("fill", "red")
+      .style("font-size", "10px")
+      .html("Error");
+
+    svg.append("text")
+      .attr("x", -15)
+      .attr("y", 15)
+      .style("cursor", "pointer")
+      .style("font-size", "11px")
+      .style("fill", "blue")
+      .on("click", function(d){
+        alert("Reloaded")        
+      })
+      .html('Reload')
+      
 
     /*g.append("text")
     	.attr("transform", function(d) {
