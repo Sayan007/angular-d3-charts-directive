@@ -288,6 +288,9 @@ export class ChartDirective implements OnInit{
     var g = svg.selectAll(".arc")
       .data(pie(self.data))
       .enter().append("g")
+      .attr("id", (d)=>{
+        return d.data.name;
+      })
       .on("click", function(d){
         // alert(d.data.count);
         tooltip.style("display", "none");
@@ -296,6 +299,7 @@ export class ChartDirective implements OnInit{
         }
       })
       .on("mousemove", function(d){
+        d3.selectAll("#"+d.data.name).style("transform","scale(1.1)");
         if(self.tooltip){
           tooltip.style("left", d3.event.pageX+10+"px");
           tooltip.style("top", d3.event.pageY-25+"px");
@@ -308,6 +312,8 @@ export class ChartDirective implements OnInit{
         }
       })
       .on("mouseout", function(d){
+        d3.selectAll("#"+d.data.name).style("transform","scale(1)");
+        // d3.selectAll("g").style("transform","scale(1)");
         if(self.tooltip){
           tooltip.style("display", "none");
         }
